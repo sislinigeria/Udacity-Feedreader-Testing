@@ -7,6 +7,7 @@ Udacity Front End Web Nanodegree project 4. This project demonstrates browser ba
 * [Project Overview](#project-overview)
 * [Installation](#installation)
 * [Task](#task)
+* [How To Use](#how-to-use)
 * [Contributing](#contributing)
 * [License](#license)
 * [Credit](#credit)
@@ -101,6 +102,10 @@ Clone or download this repository and open the `index.html` file in your browser
 When complete all tests should pass.
 
 ![Test Passed](/img/passed.jpg)
+
+## How to Use
+
+To check this out online, click this link https://sislinigeria.github.io/Udacity-Feedreader-Testing/
 
 ## Contributing
 
