@@ -130,7 +130,7 @@ $(function() {
         //expect the old feeds "entriesStart" to be different from the
         //new feed "entriesEnd"
         it('When feed is loaded, the content actually changes', function() {
-            expect(entriesStart).not.toBe(entriesEnd);
+            expect('entriesStart').not.toBe('entriesEnd');
         });
     });
 }());
