@@ -77,16 +77,17 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-         it('toggling the menu ON and OFF', function(){
-            //Does the Menu display when clicked
+        it('toggling the menu ON and OFF', function(){
+            //Does the Menu display when clicked?
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).toBe(false);
-            //Does the menu hide when clicked again
+            //Does the menu hide when clicked again?
             $('.menu-icon-link').trigger('click');
-            expect($('body').hasClass('menu-hidden')).toBe(true);
-         })
+            expect($('body').hasClass('menu-hidden')).not.toBe(false);
+        })
     });
     /* TODO: Write a new test suite named "Initial Entries" */
+    describe('Initial Entries', function(){
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -94,7 +95,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-
+    })
     /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
