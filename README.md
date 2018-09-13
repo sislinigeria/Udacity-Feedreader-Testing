@@ -118,9 +118,11 @@ This project was submitted by [Sixtus Nnamdi](www.linkedin.com/in/sixtus-nnamdi)
 
 As part of Udacity Honor code, your submissions must be your own work, hence submitting this project as yours will cause you to break the Udacity Honor Code and the suspension of your account.
 
-Me, the author of the project (*basically, all the feed assets was provided, I only coded JavaScript for the testing using [Jasmine](http://jasmine.github.io/) - feedreader.js file*), allow you to check the code as a reference, but if you submit it, it's your own responsibility if you get expelled.
+Me, the author of the project (*basically, all the feed assets was provided, I only coded JavaScript for the testing using [Jasmine](http://jasmine.github.io/) - spec/feedreader.js file*), allow you to check the code as a reference, but if you submit it, it's your own responsibility if you get expelled.
 
-Besides the above notice, the following license applies and this license notice must be included in all works derived from this project. - ![Creative Commons](https://openaid.se/wp-content/uploads/2015/03/pdm-cc0-.png)
+Besides the above notice, the following license applies and this license notice must be included in all works derived from this project. - 
+
+![Creative Commons](https://openaid.se/wp-content/uploads/2015/03/pdm-cc0-.png)
 
 ##  Credit
 
