@@ -34,9 +34,7 @@ Clone or download this repository and open the `index.html` file in your browser
     ```
      it('urls are defined and not empty', function () {
             for (var i = 0; i < allFeeds.length; i++) {
-    //Expect that it has a URL defined
                 expect(allFeeds[i].url).toBeDefined();
-    //Expect that the URL is not empty
                 expect(allFeeds[i].url.length).not.toBe(0);
             }
         })
@@ -45,9 +43,7 @@ Clone or download this repository and open the `index.html` file in your browser
     ```
     it('allFeeds object name are defined and not empty', function() {
             for (var i = 0; i < allFeeds.length; i++) {
-                //expect name to be defined
                 expect(allFeeds[i].name).toBeDefined();
-                //expect name not to be empty
                 expect(allFeeds[i].name.length).not.toBe(0)
             }
         })
