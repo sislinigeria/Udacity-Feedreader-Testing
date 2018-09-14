@@ -27,10 +27,7 @@ $(function() {
         });
 
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
+        //test ensures that each feed has a URL and is not empty
         it('urls are defined and not empty', function () {
             for (var i = 0; i < allFeeds.length; i++) {
                 //Expect that it has a URL defined
@@ -40,7 +37,7 @@ $(function() {
             }
         })
 
-        /* TODO: Write a test that loops through each feed
+        /* Test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
@@ -54,14 +51,11 @@ $(function() {
         })
     });
 
-
-    /* TODO: Write a new test suite named "The menu" */
+    //New test suite named "The menu"
     describe('The Menu', function() {
 
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
+        /* Test that ensures the menu element is
+         * hidden by default. 
          */
         it('menu element is hidden by default', function() {
             /* expect the body tag which has a class of 'menu-hidden'
@@ -72,59 +66,54 @@ $(function() {
             expect($('body').hasClass('menu.hidden')).not.toEqual(true);
         })
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
+         /* Test ensuring that the menu changes
+          * visibility when the menu icon is clicked.
           */
         it('toggling the menu ON and OFF', function() {
-            //Does the Menu display when clicked?
+            //Does the Menu display when clicked? - first expectation
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).toBe(false);
-            //Does the menu hide when clicked again?
+            //Does the menu hide when clicked again? - Second expectation
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).not.toBe(false);
         })
     });
-    /* TODO: Write a new test suite named "Initial Entries" */
+    
+    // New Test suite named "Initial Entries" 
     describe('Initial Entries', function() {
 
-        /* TODO: Write a test that ensures when the loadFeed
+        /* Test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function(done) {
             loadFeed(0, function() {
                 done();
             });
         });
-        it('When loadFeed is called, their is an entry in this feed', function() {
+        it('When loadFeed is called, their is an entry in the feed', function() {
             //expect at least 1 (counting from 0) entry in the feed
             expect($('.entry .feed')).toBeDefined();
         })
     });
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    
+    // New test suite named "New Feed Selection"
     describe('New Feed Selection', function() {
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
         
-        //ensures that the new feeds load we use beforeEach
+        //ensures that the new feeds load, we use beforeEach
         beforeEach(function(done) {
             $('.feed').empty();
             //load the feed using entriesStart to search for the first feed
             loadFeed(0, function() {
-                entriesStart = $('.feed').find(allFeeds.url);
+                entriesStart = $('.feed').html;
                 done();
-            });
+
             //new feed loads
-            loadFeed(1, function () {
-                entriesEnd = $('.feed').find(allFeeds.url);
-                done();
+                loadFeed(1, function () {
+                    entriesEnd = $('.feed').html;
+                    done();
+                });
             });
         });
         //expect the old feeds "entriesStart" to be different from the
