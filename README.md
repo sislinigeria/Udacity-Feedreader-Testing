@@ -75,26 +75,26 @@ Clone or download this repository and open the `index.html` file in your browser
                 done();
             });
         });
-        it('When loadFeed is called, their is an entry in this feed', function() {
-            expect($('.entry .feed')).toBeDefined();
-        })
+
+        it('When called, their is an entry in the feed', function() {
+            expect($('.feed .entry').length).toBeGreaterThan(0);
+        });
     ```
  * Write a test that ensures when a new feed is loaded by the `loadFeedfunction` that the content actually changes. Tests to see if two entries are not equal.
     ```
     beforeEach(function(done) {
             $('.feed').empty();
             loadFeed(0, function() {
-                entriesStart = $('.feed').find(allFeeds.url);
-                done();
+                entrStart = $('.feed').html();
+
+                loadFeed(1, function () {
+                    entrEnd = $('.feed').html();
+                    done();
+                });
             });
-            loadFeed(1, function () {
-                entriesEnd = $('.feed').find(allFeeds.url);
-                done();
-            });
-    });
-        
+        });
         it('When feed is loaded, the content actually changes', function() {
-            expect('entriesStart').not.toBe('entriesEnd');
+            expect(entrStart).not.toBe(entrEnd);
         });
     });
     ```
@@ -132,3 +132,4 @@ Credit to this work goes to
 * [Jasmine Documentation](https://jasmine.github.io/tutorials/your_first_suite)
 * Youtube Video by Ryan Boris [P4 Walkthrough: Feed Reader Jasmine Unit Tests](https://youtu.be/7kOBXPbDmyw)
 * ["Using Jasmine to test"](https://youtu.be/zdI_F7uSpqM) by Udacity
+* [Using Jasmine 2.0's New done() Function to Test Asynchronous Processes](https://www.htmlgoodies.com/beyond/javascript/stips/using-jasmine-2.0s-new-done-function-to-test-asynchronous-processes.html)
