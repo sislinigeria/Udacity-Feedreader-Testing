@@ -82,15 +82,16 @@ Clone or download this repository and open the `index.html` file in your browser
  * Write a test that ensures when a new feed is loaded by the `loadFeedfunction` that the content actually changes. Tests to see if two entries are not equal.
     ```
     beforeEach(function(done) {
-            $('.feed').empty();
-            loadFeed(0, function() {
-                entriesStart = $('.feed').find(allFeeds.url);
-                done();
-            });
+        $('.feed').empty();
+        loadFeed(0, function() {
+            entriesStart = $('.feed').html;
+            done();
+
             loadFeed(1, function () {
-                entriesEnd = $('.feed').find(allFeeds.url);
+                entriesEnd = $('.feed').html;
                 done();
             });
+        });
     });
         
         it('When feed is loaded, the content actually changes', function() {
